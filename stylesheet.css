@@ -1,0 +1,20 @@
+div {
+    height: 540px;
+    width: 540px;
+    background-color: #222222;
+    margin: auto;
+}
+
+.unit{
+	background-color: #DDDDDD;
+	height: 10px;
+    width: 10px;
+    border-style: solid;
+    border-width: 1px;
+    display: inline-block;
+    float: left;
+}
+
+.hover{
+	background-color: #FF2342;
+}

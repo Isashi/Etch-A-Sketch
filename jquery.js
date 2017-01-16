@@ -1,6 +1,6 @@
 $(document).ready(function(){
 GenGrid(20);
-Hover();
+//Hover();
 
 function Hover(){
 	$('.unit').hover(function(){
@@ -26,11 +26,30 @@ function GenGrid(res){
 	for (var u = 0; u < (res*res); u++){
 			$("<div class='unit'></div>").appendTo('#container');	
 		}
-	varheight = Math.floor((540/res)-2);
-	varwidth = Math.floor((540/res)-2);
+	varheight = Math.floor((540/res));
+	varwidth = Math.floor((540/res));
 	$('.unit').css("height", varheight);
 	$('.unit').css('width', varwidth);
 }
+
+function RandomColor(){
+	$('.unit').mouseenter(function(){
+		var	letters= '789ABCDEF';
+		var color='#';
+		for (var i=0; i<6; i++){
+			color += letters[Math.floor(Math.random()*7)];
+		} 
+		$(this).css("background-color",color);
+	});
+};
+
+$('#rainbow').click(function(){
+	squares = +prompt('Square par side?');
+	if (squares >0){
+			GenGrid(squares);
+	};
+	RandomColor();
+});
 
 $('#clean').click(function(){
 	$(".unit").css("background-color","#DDDDDD");

@@ -1,23 +1,28 @@
 $(document).ready(function(){
 GenGrid(20);
-//Hover();
 
 function Hover(){
 	$('.unit').hover(function(){
-		$(this).css("background-color", "yellow");
+		var color = $('.colorInner').css("background-color");
+		$(this).css("background-color", color);
+		$(this).css("opacity", "+=1");
 	});
 }
 
+
 function HoverShade(){
 	$('.unit').hover(function(){
-		$(this).css("opacity", "+=0.1")
-		$(this).css("background-color", "yellow");
+		var color = $('.colorInner').css("background-color");
+		$(this).css("background-color", color);
+		var currentOpacity = $(this).css("opacity");
+		$(this).css("opacity",  (currentOpacity + 0.1));
 	});
 }
 
 function Eraser(){
 	$('.unit').hover(function(){
-		$(this).css("background-color", "#DDDDDD");
+		$(this).css("background-color", "white");
+		$(this).css("opacity", "+=0");	
 	});
 }
 
@@ -35,13 +40,17 @@ function GenGrid(res){
 function RandomColor(){
 	$('.unit').mouseenter(function(){
 		var	letters= '789ABCDEF';
-		var color='#';
+		var randomcolor='#';
 		for (var i=0; i<6; i++){
-			color += letters[Math.floor(Math.random()*7)];
+			randomcolor += letters[Math.floor(Math.random()*7)];
 		} 
-		$(this).css("background-color",color);
+		$(this).css("background-color",randomcolor);
 	});
 };
+
+$('#pen').click(function(){
+	Hover();
+});
 
 $('#rainbow').click(function(){
 	squares = +prompt('Square par side?');
@@ -52,7 +61,7 @@ $('#rainbow').click(function(){
 });
 
 $('#clean').click(function(){
-	$(".unit").css("background-color","#DDDDDD");
+	$(".unit").css("background-color","white");
 });
 
 $('#eraser').click(function(){
@@ -60,10 +69,6 @@ $('#eraser').click(function(){
 });
 
 $('#shade').click(function(){
-	squares = +prompt('Square par side?');
-	if (squares >0){
-			GenGrid(squares);
-	};
 	$(".unit").css("opacity","0");
 	HoverShade();
 });
@@ -77,3 +82,6 @@ $('#resize').on('click', function(){
 });
 
 });
+
+//TinyColorPicker
+

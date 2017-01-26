@@ -10,7 +10,7 @@
 }
 
 .unit{
-	background-color: #DDDDDD;
+	background-color: white;
 	height: 10px;
     width: 10px;
     border-style: solid;
@@ -27,8 +27,16 @@
 
 #bottoneria {
 	text-align: center;
+	top: -1000px;
 }
 
 body {
-	background-color: #DDDDDD;
+	background-color: white;
+}
+
+#colorPicker{
+	display: inline-block;
+	position: absolute;
+    top: 0px;
+    left: 80px;
 }

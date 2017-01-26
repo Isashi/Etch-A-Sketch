@@ -5,14 +5,35 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 		<link type="text/css" rel="stylesheet" href="stylesheet.css"/>
 		<script type='text/javascript' src='jquery.js'></script>
+		
+
+		<link rel="stylesheet" href="tinycolorpicker.css" type="text/css" media="screen"/>
+    	<script type="text/javascript" src="https://code.jquery.com/jquery-latest.min.js"></script>
+    	<script type="text/javascript" src="tinycolorpicker.js"></script>
+		<script type="text/javascript">
+		$(document).ready(function()
+        {
+			var $box = $('#colorPicker');
+            $box.tinycolorpicker();
+		});
+		</script>
+
+
 	</head>
 	<body>
 		<div id='bottoneria'>
-		<button type="button" id="clean">Clean</button> 
+		<button type="button" id="pen">Pen</button>
+		<button type="button" id="clean">Clean</button>  
 		<button type="button" id="resize">Resize</button>
 		<button type="button" id="shade">Shade</button>
 		<button type="button" id="eraser">Eraser</button>
 		<button type="button" id="rainbow">Rainbow</button>
+		<div id="colorPicker">
+        <a class="color"><div class="colorInner"></div></a>
+        <div class="track"></div>
+        <ul class="dropdown"><li></li></ul>
+        <input type="hidden" class="colorInput"/>
+    	</div>
 		</div>
 		<div id='container'></div>
 	</body>

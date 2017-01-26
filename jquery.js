@@ -1,5 +1,8 @@
 $(document).ready(function(){
-GenGrid(20);
+var squares = 20;
+$(".colorInner").css("background-color","black");
+GenGrid(squares);
+Hover();
 
 function Hover(){
 	$('.unit').hover(function(){
@@ -11,11 +14,11 @@ function Hover(){
 
 
 function HoverShade(){
+	
 	$('.unit').hover(function(){
 		var color = $('.colorInner').css("background-color");
 		$(this).css("background-color", color);
-		var currentOpacity = $(this).css("opacity");
-		$(this).css("opacity",  (currentOpacity + 0.1));
+		$(this).css("opacity", "+=0.1");
 	});
 }
 
@@ -49,14 +52,12 @@ function RandomColor(){
 };
 
 $('#pen').click(function(){
+	GenGrid(squares);
 	Hover();
 });
 
 $('#rainbow').click(function(){
-	squares = +prompt('Square par side?');
-	if (squares >0){
-			GenGrid(squares);
-	};
+	GenGrid(squares);
 	RandomColor();
 });
 
@@ -69,6 +70,7 @@ $('#eraser').click(function(){
 });
 
 $('#shade').click(function(){
+	GenGrid(squares);
 	$(".unit").css("opacity","0");
 	HoverShade();
 });
@@ -82,6 +84,3 @@ $('#resize').on('click', function(){
 });
 
 });
-
-//TinyColorPicker
-

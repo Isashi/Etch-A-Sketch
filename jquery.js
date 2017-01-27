@@ -18,7 +18,7 @@ function HoverShade(){
 	$('.unit').hover(function(){
 		var color = $('.colorInner').css("background-color");
 		$(this).css("background-color", color);
-		$(this).css("opacity", "+=0.1");
+		$(this).css("opacity", "+=0.05");
 	});
 }
 
@@ -62,7 +62,7 @@ $('#rainbow').click(function(){
 });
 
 $('#clean').click(function(){
-	$(".unit").css("background-color","white");
+	GenGrid(squares);
 });
 
 $('#eraser').click(function(){
@@ -82,5 +82,22 @@ $('#resize').on('click', function(){
 			Hover()
 	};
 });
+
+$('button').on('click', function(){
+	$('button').css("background-color","white");
+	$('button').css("color","black");
+	$(this).css("background-color","red");
+});
+
+$('button').mouseenter(function(){
+	$(this).css("background-color","#4CAF50");
+	$(this).css("color","white");
+});
+
+$('button').mouseleave(function(){
+	$(this).css("background-color","white");
+	$(this).css("color","black");
+});
+
 
 });

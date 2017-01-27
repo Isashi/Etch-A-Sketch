@@ -52,14 +52,17 @@ function RandomColor(){
 };
 
 function TrailEffect(){
-	$('.unit').hover(
-		function(){
-			$(this).animate({backgroundColor: "black"}, "fast");
-		},
-		function(){
-			$(this).animate({backgroundColor: "white"}, "fast");
-	});
-}
+	var color = $('.colorInner').css("background-color");
+	$(".unit").mouseenter(function(){
+    $(this).css('transition', 'all 0s')
+    $(this).css('background', color)
+  })
+  	$(".unit").mouseleave(function(){
+    $(this).css('transition', 'all 1s')
+    $(this).css('background', 'white')
+  })
+  
+};
 
 
 $('#pen').click(function(){

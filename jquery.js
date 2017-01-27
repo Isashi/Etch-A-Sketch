@@ -51,6 +51,17 @@ function RandomColor(){
 	});
 };
 
+function TrailEffect(){
+	$('.unit').hover(
+		function(){
+			$(this).animate({backgroundColor: "black"}, "fast");
+		},
+		function(){
+			$(this).animate({backgroundColor: "white"}, "fast");
+	});
+}
+
+
 $('#pen').click(function(){
 	GenGrid(squares);
 	Hover();
@@ -67,6 +78,11 @@ $('#clean').click(function(){
 
 $('#eraser').click(function(){
 	Eraser();
+});
+
+$('#trail').click(function(){
+	GenGrid(squares);
+	TrailEffect();
 });
 
 $('#shade').click(function(){
@@ -98,6 +114,7 @@ $('button').mouseleave(function(){
 	$(this).css("background-color","white");
 	$(this).css("color","black");
 });
+
 
 
 });

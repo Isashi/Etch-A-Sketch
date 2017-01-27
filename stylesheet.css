@@ -21,6 +21,10 @@
     opacity: 1;
 }
 
+.special{
+	background-color: black;
+}
+
 .hover{
 	background-color: #FF2342;
 }
@@ -71,4 +75,26 @@ button {
 
 #title:hover{
   cursor: default;
+}
+
+.social-buttons {
+	margin-top: 30px;
+	text-align: center;
+}
+
+@media screen and (max-width: 410px) {
+	.row div {
+		margin: -3px;
+
+		width: calc( var(--size-block) - 20px);
+		height: calc( var(--size-block) - 20px);
+	}
+
+	.row {
+		margin-bottom: -10px;
+	}
+
+	.social-buttons {
+		font-size: .7em;
+	}
 }

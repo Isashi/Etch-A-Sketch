@@ -65,6 +65,10 @@ function TrailEffect(){
 };
 
 
+$('.special').click(function(){
+	$(".unit").css("border-radius","100000px");
+});
+
 $('#pen').click(function(){
 	GenGrid(squares);
 	Hover();

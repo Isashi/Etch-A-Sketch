@@ -4,6 +4,14 @@ $(".colorInner").css("background-color","black");
 GenGrid(squares);
 Hover();
 
+function CheckShape(){
+	if ($('.special').hasClass('circle') ) {
+  		$('.normal').addClass('circle');
+	} else {
+  		$('.normal').removeClass('circle');
+}
+}
+
 function Hover(){
 	$('.normal').hover(function(){
 		var color = $('.colorInner').css("background-color");
@@ -38,6 +46,7 @@ function GenGrid(res){
 	varwidth = Math.floor((540/res));
 	$('.normal').css("height", varheight);
 	$('.normal').css('width', varwidth);
+	CheckShape();
 }
 
 function RandomColor(){

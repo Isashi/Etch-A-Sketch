@@ -23,6 +23,12 @@
 
 .special{
 	background-color: black;
+	height: 30px;
+    width: 30px;
+}
+
+.circle{
+	border-radius: 100%;
 }
 
 .hover{

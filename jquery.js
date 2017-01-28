@@ -5,7 +5,7 @@ GenGrid(squares);
 Hover();
 
 function Hover(){
-	$('.unit').hover(function(){
+	$('.normal').hover(function(){
 		var color = $('.colorInner').css("background-color");
 		$(this).css("background-color", color);
 		$(this).css("opacity", "+=1");
@@ -15,7 +15,7 @@ function Hover(){
 
 function HoverShade(){
 	
-	$('.unit').hover(function(){
+	$('.normal').hover(function(){
 		var color = $('.colorInner').css("background-color");
 		$(this).css("background-color", color);
 		$(this).css("opacity", "+=0.05");
@@ -23,7 +23,7 @@ function HoverShade(){
 }
 
 function Eraser(){
-	$('.unit').hover(function(){
+	$('.normal').hover(function(){
 		$(this).css("background-color", "white");
 		$(this).css("opacity", "+=0");	
 	});
@@ -32,16 +32,16 @@ function Eraser(){
 function GenGrid(res){
 	$('#container').empty();
 	for (var u = 0; u < (res*res); u++){
-			$("<div class='unit'></div>").appendTo('#container');	
+			$("<div class='unit normal'></div>").appendTo('#container');	
 		}
 	varheight = Math.floor((540/res));
 	varwidth = Math.floor((540/res));
-	$('.unit').css("height", varheight);
-	$('.unit').css('width', varwidth);
+	$('.normal').css("height", varheight);
+	$('.normal').css('width', varwidth);
 }
 
 function RandomColor(){
-	$('.unit').mouseenter(function(){
+	$('.normal').mouseenter(function(){
 		var	letters= '789ABCDEF';
 		var randomcolor='#';
 		for (var i=0; i<6; i++){
@@ -53,11 +53,11 @@ function RandomColor(){
 
 function TrailEffect(){
 	var color = $('.colorInner').css("background-color");
-	$(".unit").mouseenter(function(){
+	$(".normal").mouseenter(function(){
     $(this).css('transition', 'all 0s')
     $(this).css('background', color)
   })
-  	$(".unit").mouseleave(function(){
+  	$(".normal").mouseleave(function(){
     $(this).css('transition', 'all 1s')
     $(this).css('background', 'white')
   })
@@ -66,7 +66,7 @@ function TrailEffect(){
 
 
 $('.special').click(function(){
-	$(".unit").css("border-radius","100000px");
+	$(".unit").toggleClass("circle");
 });
 
 $('#pen').click(function(){
@@ -94,7 +94,7 @@ $('#trail').click(function(){
 
 $('#shade').click(function(){
 	GenGrid(squares);
-	$(".unit").css("opacity","0");
+	$(".normal").css("opacity","0");
 	HoverShade();
 });
 

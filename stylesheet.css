@@ -5,8 +5,9 @@
     margin: auto;
     margin-top: 10px;
     border-width: 1px;
-	border-color: black;
-	border-style: solid;
+	  border-color: black;
+	  border-style: solid;
+    float: left;
 }
 
 .unit{
@@ -18,7 +19,6 @@
     display: inline-block;
     border-color: rgba(0,0,0,1);
     float: left;
-    opacity: 0;
 }
 
 .normal{
@@ -30,6 +30,7 @@
 	height: 30px;
     width: 30px;
     transition: all 1s;
+    opacity: 1;
 }
 
 .circle{
@@ -42,7 +43,7 @@
 
 #bottoneria {
 	text-align: center;
-	top: -1000px;
+  margin-left: 540px;
 }
 
 body {

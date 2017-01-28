@@ -2,7 +2,7 @@ $(document).ready(function(){
 var squares = 20;
 $(".colorInner").css("background-color","black");
 GenGrid(squares);
-Hover();
+//Hover();
 
 function CheckShape(){
 	if ($('.special').hasClass('circle') ) {
@@ -22,6 +22,7 @@ function Hover(){
 
 
 function HoverShade(){
+	$('.normal').stop(true);
 	$('.normal').hover(function(){
 		var color = $('.colorInner').css("background-color");
 		$(this).css("opacity", "+=0.05");
@@ -45,7 +46,7 @@ function GenGrid(res){
 	varwidth = Math.floor((540/res));
 	$('.normal').css("height", varheight);
 	$('.normal').css('width', varwidth);
-	$('.normal').css("opacity","0");
+	//$('.normal').css("opacity",0);
 	CheckShape();
 }
 
@@ -66,7 +67,7 @@ function RandomColor(){
 };
 
 function TrailEffect(){
-	$(".normal").hover(function(){
+	$(".normal").mouseenter(function(){
 	var color = $('.colorInner').css("background-color");	
     $(this).css('transition', 'all 0s')
     $(this).css('background', color)
@@ -110,8 +111,7 @@ $('#trail').click(function(){
 });
 
 $('#shade').click(function(){
-	//GenGrid(squares);
-	//$(".normal").css("opacity","0");
+	GenGrid(squares);
 	HoverShade();
 });
 

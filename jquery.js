@@ -111,7 +111,7 @@ $('#trail').click(function(){
 });
 
 $('#shade').click(function(){
-	GenGrid(squares);
+	//GenGrid(squares);
 	HoverShade();
 });
 

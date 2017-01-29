@@ -13,6 +13,7 @@ function CheckShape(){
 }
 
 function Hover(){
+	$('.normal').unbind();
 	$('.normal').hover(function(){
 		var color = $('.colorInner').css("background-color");
 		$(this).css("background-color", color);
@@ -22,7 +23,7 @@ function Hover(){
 
 
 function HoverShade(){
-	$('.normal').stop(true);
+	$('.normal').unbind();
 	$('.normal').hover(function(){
 		var color = $('.colorInner').css("background-color");
 		$(this).css("opacity", "+=0.05");
@@ -31,9 +32,10 @@ function HoverShade(){
 }
 
 function Eraser(){
+	$('.normal').unbind();
 	$('.normal').hover(function(){
 		$(this).css("background-color", "white");
-		$(this).css("opacity", "+=0");	
+		$(this).css("opacity", 0);	
 	});
 }
 
@@ -51,7 +53,8 @@ function GenGrid(res){
 }
 
 function RandomColor(){
-	$('.normal').hover(function(){
+	$('.normal').unbind();
+	$('.normal').mouseenter(function(){
 		var	letters= '789ABCDEF';
 		var randomcolor='#';
 		for (var i=0; i<6; i++){
@@ -67,15 +70,16 @@ function RandomColor(){
 };
 
 function TrailEffect(){
-	$(".normal").mouseenter(function(){
+	$('.normal').unbind();
+	$('.normal').hover(function(){
 	var color = $('.colorInner').css("background-color");	
-    $(this).css('transition', 'all 0s')
+    $(this).css('transition', '0s')
     $(this).css('background', color)
     $(this).css("opacity", "+=1");
   })
-  	$(".normal").mouseleave(function(){
-    $(this).css('transition', 'all 1s')
-    $(this).css('background', 'white')
+  	$('.normal').mouseleave(function(){
+    $(this).css('transition', '1s')
+    $(this).css('opacity', 0)
   })
   
 };
@@ -87,6 +91,9 @@ $('.special').click(function(){
 
 $('#pen').click(function(){
 	//GenGrid(squares);
+	$(".normal").css("transition","all 0s");
+	$(".normal").unbind("hover");
+	$(".normal").unbind("mouseleave");
 	Hover();
 });
 
@@ -99,19 +106,25 @@ $('#rainbow').click(function(){
 $('#clean').click(function(){
 	$(".normal").css("background-color","white");
 	$(".normal").css("opacity","0");
+	$(".normal").css('transition', '0s')
 });
 
 $('#eraser').click(function(){
+	$(".normal").css("transition","all 0s");
+	$(".normal").unbind("hover");
 	Eraser();
 });
 
 $('#trail').click(function(){
 	//GenGrid(squares);
+	$(".normal").unbind("hover");
 	TrailEffect();
 });
 
 $('#shade').click(function(){
 	//GenGrid(squares);
+	$(".normal").unbind("hover");
+	$(".normal").css("transition","all 0s");
 	HoverShade();
 });
 
